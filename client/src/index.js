@@ -20,13 +20,15 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-    	<div>
-        <Route path="/" component={NavigationBar} /> 
-    		<Switch>
-    			<Route path="/register" component={RegisterForm} />
-          <Route path="/login" component={LoginForm} />
-      	</Switch>
-      </div>
+    	 <div>
+       <header>
+          <Route path="/" component={NavigationBar} />
+       </header> 
+    		
+    			<Route path="/register" exact component={RegisterForm} />
+          <Route path="/login" exact component={LoginForm} />
+      	
+        </div>
     </BrowserRouter>
   </Provider>
   , document.querySelector('.root'));
