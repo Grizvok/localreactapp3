@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 
-import './App.css';
+import '../App.css';
 
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
@@ -11,12 +11,9 @@ import { NavDropdown } from 'react-bootstrap';
 import { MenuItem } from 'react-bootstrap';
 
 
-class App extends Component {
-  state = {
-    response: ''
-  };
+class NavigationBar extends Component {
  
-
+ 
   render() {
     return (
 
@@ -51,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default NavigationBar;
