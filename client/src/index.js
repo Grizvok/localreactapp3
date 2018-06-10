@@ -4,12 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
+import './App.css';
 
 import reducers from './reducers';
 
 import NavigationBar from './components/nav_bar';
 import RegisterForm from './components/register_form';
 import LoginForm from './components/login_form';
+import HomeJumbotron from './components/home_jumbotron';
 
 
 
@@ -21,14 +23,13 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
     	 <div>
-       <header>
+        <header>
           <Route path="/" component={NavigationBar} />
-       </header> 
-    		
-    			<Route path="/register" exact component={RegisterForm} />
-          <Route path="/login" exact component={LoginForm} />
-      	
-        </div>
+        </header> 
+          <Route path="/register" component={RegisterForm} />
+          <Route path="/login" component={LoginForm} />
+    		  <Route exact path="/" component={HomeJumbotron} />
+      </div>
     </BrowserRouter>
   </Provider>
   , document.querySelector('.root'));

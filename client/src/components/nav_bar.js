@@ -1,60 +1,55 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
-
-
-
-import '../App.css';
-
-import { Navbar } from 'react-bootstrap';
-import { Nav } from 'react-bootstrap';
-import { NavItem } from 'react-bootstrap';
-import { NavDropdown } from 'react-bootstrap';
-import { MenuItem } from 'react-bootstrap';
-
 
 class NavigationBar extends Component {
- 
+  constructor(props) {
+    super(props);
 
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    console.log(event)
+  }
 
 render() {
-    return (
+  return (
+//   <nav onClick={this.handleClick} className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+//   <Link className="navbar-brand" to="/">Twitchthroe</Link>
+//   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+//   aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+//     <span className="navbar-toggler-icon"></span>
+//   </button>
 
-      <Navbar bsStyle='default' inverse collapseOnSelect>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <LinkContainer to="/">
-      <a className="brand" href="/">Twitchthroe</a>
-      </LinkContainer>
-    </Navbar.Brand>
-    <Navbar.Toggle />
-  </Navbar.Header>
-  <Navbar.Collapse>
-    <Nav>
-      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Action</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.4}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.5}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
-    <Nav pullRight>
-      <LinkContainer to="/login">
-      <NavItem href="/login">
-        Login
-      </NavItem>
-      </LinkContainer>
-      <LinkContainer to="/register">
-      <NavItem eventKey={2} href="/register">
-        Register
-      </NavItem>
-      </LinkContainer>
-      </Nav>
-  </Navbar.Collapse>
-</Navbar>
-    );
-  }
+//   <div className="collapse navbar-collapse" id="navbarSupportedContent">
+//     <ul className="navbar-nav mr-auto">
+//        {/* <li className="nav-item dropdown">
+//         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//           Dropdown
+//         </a>
+//         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+//           <a className="dropdown-item" href="#">Action</a>
+//           <a className="dropdown-item" href="#">Another action</a>
+//           <div className="dropdown-divider"></div>
+//           <a className="dropdown-item" href="#">Something else here</a>
+//         </div>
+//       </li> */}
+//       <li data-toggle="collapse" data-target=".navbar-collapse.show" className="nav-item navbar-collapse">
+//         {/* <Link to="/login"><a role="button" className="nav-link" href="#">Login</a></Link> */}
+//         <Link className="nav-link" to="/login">Login</Link>
+//       </li>
+//       <li data-toggle="collapse" data-target=".navbar-collapse.show" className="nav-item navbar-collapse">
+//         <Link className="nav-link" to="/register">Register</Link>
+//       </li>
+//     </ul>
+//     <form className="form-inline my-2 my-lg-0">
+//       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+//       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+//     </form>
+//   </div>
+// </nav>
+  );
+};
 }
 
 export default NavigationBar;
