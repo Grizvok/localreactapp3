@@ -14,6 +14,7 @@ class NavigationBar extends Component {
 
 render() {
   return (
+    <div>Hello World!</div>
 //   <nav onClick={this.handleClick} className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 //   <Link className="navbar-brand" to="/">Twitchthroe</Link>
 //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
