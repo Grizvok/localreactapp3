@@ -1,25 +1,28 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
-import { Button } from 'react-bootstrap'; 
-import { Grid } from 'react-bootstrap';
+import { Jumbotron, Button, Container } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
 
+const Example = (props) => {
 
-class HomeJumbotron extends React.Component {
-	render() {
-	 return (
-		<div className="jumbotron">
-			<h1 className="display-4">Welcome to Twitchthroe</h1>
-			<p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-			<hr className="my-4" />
-			<p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-			<p className="lead">
-				<a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-			</p>
-		</div>
-			);
-	}
-}
+	// let styles= {
+	// 	backgroundColor: '#2B3A42'
+	// };
 
-export default HomeJumbotron;
+  return (
+    <div>
+      <Jumbotron fluid>
+			<Container fluid>
+        <p className="lead">Twitchthroe is a web application built to streamline your Twitch viewing experience.</p>
+        <hr className="my-2" />
+        <p>It utilizes the excellent Twitch API to bring the content right to you without the clutter of Twitch's main site. Simply add channels to your list of streams to track and go! </p>
+        <p className="lead">
+          <Link to="/register"> <Button color="primary">Register now!</Button>
+					</Link>
+        </p>
+				</Container>
+      </Jumbotron>
+    </div>
+  );
+};
+
+export default Example;

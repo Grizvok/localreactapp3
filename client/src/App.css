@@ -1,3 +1,14 @@
 .navbar-brand {
   font-size:200%;
+  margin-left: 5%;
 }
+
+.link {
+  text-decoration: none;
+}
+
+a {color:#FFF;}      /* unvisited link */
+a:visited {color:inherit;}  /* visited link */
+a:hover {color:#FFF;}  /* mouse over link */
+a:active {color:#0000FF;} /* selected link  */
+

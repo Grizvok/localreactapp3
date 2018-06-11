@@ -1,56 +1,68 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+  import { Link } from 'react-router-dom';
+  import InlineLogin from './inline_login';
 
-class NavigationBar extends Component {
+export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
   }
-
-  handleClick(event) {
-    console.log(event)
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
-
-render() {
-  return (
-    <div>Hello World!</div>
-//   <nav onClick={this.handleClick} className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-//   <Link className="navbar-brand" to="/">Twitchthroe</Link>
-//   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-//   aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-//     <span className="navbar-toggler-icon"></span>
-//   </button>
-
-//   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//     <ul className="navbar-nav mr-auto">
-//        {/* <li className="nav-item dropdown">
-//         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//           Dropdown
-//         </a>
-//         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-//           <a className="dropdown-item" href="#">Action</a>
-//           <a className="dropdown-item" href="#">Another action</a>
-//           <div className="dropdown-divider"></div>
-//           <a className="dropdown-item" href="#">Something else here</a>
-//         </div>
-//       </li> */}
-//       <li data-toggle="collapse" data-target=".navbar-collapse.show" className="nav-item navbar-collapse">
-//         {/* <Link to="/login"><a role="button" className="nav-link" href="#">Login</a></Link> */}
-//         <Link className="nav-link" to="/login">Login</Link>
-//       </li>
-//       <li data-toggle="collapse" data-target=".navbar-collapse.show" className="nav-item navbar-collapse">
-//         <Link className="nav-link" to="/register">Register</Link>
-//       </li>
-//     </ul>
-//     <form className="form-inline my-2 my-lg-0">
-//       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-//       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-//     </form>
-//   </div>
-// </nav>
-  );
-};
+  render() {
+    return (
+      <div>
+        <Navbar color="dark" dark expand="md">
+          <NavbarBrand tag={Link} to="/">Twitchthroe</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink tag={Link} to="/register">Register</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/login">Login</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
-
-export default NavigationBar;
