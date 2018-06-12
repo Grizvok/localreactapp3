@@ -1,37 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-//import { connect } from 'react-redux';
+import { Button, Form, FormGroup, Label, Input, FormText, Container, Col, Row } from 'reactstrap';
 
-class LoginForm extends React.Component {
+export default class RegisterForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			email:'',
-			password:''
-		};
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit.bind(this);
 	}
-
-	handleChange(event) {
-
-	}
-
-	handleSubmit(event) {
-		event.preventDefault();
-	}
-
-
-	render() {
-		return(
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<input type="text"/>
-				</form>
-			</div>
-		);
-	}
+handleSubmit(event) {
+	event.preventDefault();
 }
-
-export default LoginForm;
+	
+  render() {
+    return (
+			<Container>
+			<Row className="justify-content-center">	
+			<Col xs="4">
+      <Form>
+        <FormGroup>
+          <Label for="exampleEmail"></Label>
+          <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword"></Label>
+          <Input type="password" name="password" id="Password" placeholder="Password" />
+        </FormGroup>
+				<FormGroup>
+          <Label for="examplePassword"></Label>
+          <Input type="password" name="password" id="repeatPassword" placeholder="Confirm password" />
+        </FormGroup>
+        <Button onClick={this.handleSubmit}>Submit</Button>
+      </Form>
+			</Col>
+			</Row>
+			</Container>
+    );
+  }
+}
