@@ -12,3 +12,11 @@ a:visited {color:inherit;}  /* visited link */
 a:hover {color:#FFF;}  /* mouse over link */
 a:active {color:#0000FF;} /* selected link  */
 
+html, body {
+  height: 100%;
+}
+
+.main {
+  min-height: 500px;
+}
+

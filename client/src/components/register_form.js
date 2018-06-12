@@ -1,16 +1,30 @@
 import React from 'react';
-//import { connect } from 'react-redux';
+import { Button, Form, FormGroup, Label, Input, FormText, Container, Col, Row } from 'reactstrap';
 
-class RegisterForm extends React.Component {
-	render() {
-		return(
-			<div>
-				<form>
-					<h3>There will be a register form here</h3>
-				</form>
-			</div>
-		);
-	}
+export default class RegisterForm extends React.Component {
+  render() {
+    return (
+			<Container>
+			<Row>	
+			<Col size="lg">
+      <Form>
+        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">Password</Label>
+          <Input type="password" name="password" id="Password" placeholder="password placeholder" />
+        </FormGroup>
+				<FormGroup>
+          <Label for="examplePassword">Password</Label>
+          <Input type="password" name="password" id="repeatPassword" placeholder="password placeholder" />
+        </FormGroup>
+        <Button>Submit</Button>
+      </Form>
+			</Col>
+			</Row>
+			</Container>
+    );
+  }
 }
-
-export default RegisterForm;

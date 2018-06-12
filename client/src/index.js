@@ -24,7 +24,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-    	 <div>
+    	 <div className="main">
         <header>
           <Route path="/" component={NavigationBar} />
         </header> 

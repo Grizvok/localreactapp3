@@ -28,7 +28,11 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
+    let styles = {
+      color: 'white'
+    };
     return (
       <div>
         <Navbar color="dark" dark expand="md">
@@ -37,13 +41,13 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink tag={Link} to="/register">Register</NavLink>
+                <NavLink style={styles} tag={Link} to="/register">Register</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/login">Login</NavLink>
+                <NavLink style={styles} tag={Link} to="/login">Login</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle style={styles} nav caret>
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>

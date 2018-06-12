@@ -4,22 +4,25 @@ import { Link } from 'react-router-dom';
 
 const Example = (props) => {
 
-	// let styles= {
-	// 	backgroundColor: '#2B3A42'
-	// };
+	let styles= {
+		height: '100%'
+	};
 
   return (
-    <div>
+    <div style={styles}>
       <Jumbotron fluid>
 			<Container fluid>
         <p className="lead">Twitchthroe is a web application built to streamline your Twitch viewing experience.</p>
         <hr className="my-2" />
         <p>It utilizes the excellent Twitch API to bring the content right to you without the clutter of Twitch's main site. Simply add channels to your list of streams to track and go! </p>
-        <p className="lead">
+				</Container>
+        <Container>
+          <p className="lead">Take your own gaming to the next level by exploring your favorite gamers hardware and setups.</p>
+          <p className="lead">Take your own gaming to the next level by exploring your favorite gamers hardware and setups.</p>
+          <p className="lead">Take your own gaming to the next level by exploring your favorite gamers hardware and setups.</p>
           <Link to="/register"> <Button color="primary">Register now!</Button>
 					</Link>
-        </p>
-				</Container>
+        </Container>
       </Jumbotron>
     </div>
   );
